@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="id.odt.museek.fragment.HomeFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:indeterminateDrawable="@drawable/museek_progressbar"/>
+
+    <Button
+        android:id="@+id/btnRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retry"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <!-- TODO: Update blank fragment layout -->
+    <id.odt.swipecardlib.SwipeCardView
+        android:id="@+id/card_stack_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:rotation_degrees="15.5"
+        app:bottom_swipe_detect="false"
+        tools:context=".CardSwipeActivity"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnUnlike"
+            android:layout_width="0px"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_cross"
+            android:tint="@color/md_white_1000"
+            app:backgroundTint="@color/red"
+            app:elevation="4dp"
+            android:onClick="unlike"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnLike"
+            android:layout_width="0px"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_done"
+            android:tint="@color/md_white_1000"
+            app:backgroundTint="@color/md_green_A700"
+            app:elevation="4dp"
+            android:onClick="like" />
+    </LinearLayout>
+
+</LinearLayout>

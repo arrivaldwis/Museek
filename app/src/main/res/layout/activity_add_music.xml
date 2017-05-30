@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CoordinatorLayout01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            app:layout_scrollFlags="snap|scroll|enterAlways">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/md_black_1000">
+
+                <LinearLayout
+                    android:id="@+id/btn_ep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:tint="#ababab"
+                        android:src="@drawable/left" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:visibility="visible">
+
+                    <com.pixplicity.fontview.FontAppCompatTextView
+                        style="@style/FontTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="PUBLISH"
+                        android:textColor="#c1c1c1"
+                        android:textSize="14.5dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/md_grey_900">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/tvartist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Artist"
+                android:textSize="18dp"
+                app:met_accentTypeface="fonts/Karla-Regular.ttf"
+                app:met_baseColor="#049eb6"
+                app:met_floatingLabel="highlight"
+                app:met_iconPadding="0dp"
+                app:met_primaryColor="#0067b6f5"
+                app:met_singleLineEllipsis="true"
+                app:met_textColor="#fff"
+                app:met_textColorHint="#c1c1c1"
+                app:met_typeface="fonts/Karla-Regular.ttf"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/tvtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:textSize="18dp"
+                app:met_accentTypeface="fonts/Karla-Regular.ttf"
+                app:met_baseColor="#696969"
+                app:met_floatingLabel="highlight"
+                app:met_iconPadding="0dp"
+                app:met_primaryColor="#0067b6f5"
+                app:met_textColor="#fff"
+                app:met_textColorHint="#c1c1c1"
+                app:met_typeface="fonts/Karla-Regular.ttf"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Upload Files"
+                android:textColor="#c1c1c1"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2"
+                android:padding="15dp">
+                <RelativeLayout
+                    android:id="@+id/btnUploadCover"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgCover"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_picture"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:tint="#c1c1c1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Cover"
+                        android:layout_below="@+id/imgCover"
+                        android:gravity="center"
+                        android:textColor="#c1c1c1"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/btnUploadMusic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgMusic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_music"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:tint="#c1c1c1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Music"
+                        android:layout_below="@+id/imgMusic"
+                        android:gravity="center"
+                        android:textColor="#c1c1c1"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

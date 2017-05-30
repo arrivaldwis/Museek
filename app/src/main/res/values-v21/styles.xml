@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:windowFullscreen">false</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="colorControlActivated">@color/red</item>
+  </style>
+
+  <style name="FontTextViewStyle" parent="@android:style/TextAppearance.Widget.TextView">
+    <item name="pix_font">fonts/Karla-Regular.ttf</item>
+    <item name="pix_fontBold">fonts/Karla-Bold.ttf</item>
+    <item name="pix_fontItalic">fonts/Karla-Italic.ttf</item>
+    <item name="pix_fontBoldItalic">fonts/Karla-BoldItalic.ttf</item>
+  </style>
+</resources>
