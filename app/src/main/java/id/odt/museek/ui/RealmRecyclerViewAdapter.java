@@ -5,7 +5,7 @@ package id.odt.museek.ui;
  */
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import io.realm.RealmObject;
 import io.realm.RealmResults;

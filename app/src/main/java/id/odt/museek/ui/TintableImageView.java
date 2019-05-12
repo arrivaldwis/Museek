@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 import id.odt.museek.R;
 
@@ -12,7 +11,7 @@ import id.odt.museek.R;
  * Created by arrival on 4/18/17.
  */
 
-public class TintableImageView extends android.support.v7.widget.AppCompatImageView {
+public class TintableImageView extends androidx.appcompat.widget.AppCompatImageView {
     private ColorStateList tint;
 
     public TintableImageView(Context context) {

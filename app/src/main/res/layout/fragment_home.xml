@@ -40,28 +40,29 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:layout_marginBottom="46dp">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnUnlike"
             android:layout_width="0px"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="3dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_cross"
+            android:src="@drawable/ic_close_black_48dp"
             android:tint="@color/md_white_1000"
             app:backgroundTint="@color/red"
             app:elevation="4dp"
             android:onClick="unlike"/>
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnLike"
             android:layout_width="0px"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_done"
+            android:src="@drawable/ic_check_black_48dp"
             android:tint="@color/md_white_1000"
             app:backgroundTint="@color/md_green_A700"
             app:elevation="4dp"

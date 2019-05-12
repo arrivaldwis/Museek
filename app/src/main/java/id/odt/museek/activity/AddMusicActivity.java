@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -163,18 +162,21 @@ public class AddMusicActivity extends AppCompatActivity {
     private void uploadCover(byte[] data, String filename) {
         StorageReference imagesRef = storageRef.child("cover/"+filename+".jpg");
         UploadTask uploadTask = imagesRef.putBytes(data);
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle unsuccessful uploads
+        uploadTask.addOnProgressListener(taskSnapshot -> {
+            int progress = (100 * (int)taskSnapshot.getBytesTransferred()) / (int)taskSnapshot.getTotalByteCount();
+        }).continueWithTask(task -> {
+            if (!task.isSuccessful()) {
+                throw task.getException();
             }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
-                @SuppressWarnings("VisibleForTests")
-                Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                coverUrl = downloadUrl.toString();
+
+            return imagesRef.getDownloadUrl();
+        }).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Uri downloadUri = task.getResult();
+                if (downloadUri == null)
+                    return;
+
+                coverUrl = downloadUri.toString();
                 coverUploaded = true;
             }
         });
@@ -183,18 +185,21 @@ public class AddMusicActivity extends AppCompatActivity {
     private void uploadMusic(byte[] data, String filename) {
         StorageReference imagesRef = storageRef.child("music/"+filename+".jpg");
         UploadTask uploadTask = imagesRef.putBytes(data);
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle unsuccessful uploads
+        uploadTask.addOnProgressListener(taskSnapshot -> {
+            int progress = (100 * (int)taskSnapshot.getBytesTransferred()) / (int)taskSnapshot.getTotalByteCount();
+        }).continueWithTask(task -> {
+            if (!task.isSuccessful()) {
+                throw task.getException();
             }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
-                @SuppressWarnings("VisibleForTests")
-                Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                musicUrl = downloadUrl.toString();
+
+            return imagesRef.getDownloadUrl();
+        }).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Uri downloadUri = task.getResult();
+                if (downloadUri == null)
+                    return;
+
+                musicUrl = downloadUri.toString();
                 musicUploaded = true;
             }
         });

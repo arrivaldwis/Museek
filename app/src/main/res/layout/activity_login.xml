@@ -70,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:src="@drawable/google"
+            android:visibility="gone"
 
             />
 
@@ -79,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:src="@drawable/twitter"
+            android:visibility="gone"
 
             />
 

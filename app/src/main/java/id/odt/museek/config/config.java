@@ -1,13 +1,10 @@
 package id.odt.museek.config;
 
 import android.app.Application;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
-import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by arrival on 4/18/17.
@@ -26,11 +23,6 @@ public class config extends Application {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         super.onCreate();
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        final Fabric fabric = new Fabric.Builder(this)
-                .kits(new Twitter(authConfig), new Crashlytics())
-                .debuggable(true)
-                .build();
-        Fabric.with(fabric);
         MultiDex.install(this);
     }
 }

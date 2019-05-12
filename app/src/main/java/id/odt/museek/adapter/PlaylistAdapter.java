@@ -2,11 +2,10 @@ package id.odt.museek.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -14,12 +13,8 @@ import android.view.animation.AnimationUtils;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.Collections;
-import java.util.List;
-
 import id.odt.museek.R;
 import id.odt.museek.activity.PlayerActivity;
-import id.odt.museek.model.Card;
 import id.odt.museek.model.CardRealm;
 import id.odt.museek.ui.RealmRecyclerViewAdapter;
 import id.odt.museek.viewholder.VHPlaylist;
